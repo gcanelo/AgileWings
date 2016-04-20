@@ -13,7 +13,7 @@ describe "BlackJack" do
 	
 	it "cargar Banca" do
 		game = BlackJack.new
-		game.cargarBanca.should == "18"
+		game.cargarBanca.should == 18
 	end
 
 end

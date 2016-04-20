@@ -8,6 +8,6 @@ class BlackJack
 	end
 
 	def cargarBanca
-		return "18"
+		return 18
 	end
 end
