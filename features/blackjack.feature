@@ -22,4 +22,4 @@ Scenario: Ver perdedor
 	Given Voy al inicio
 	When Presiono boton Pide Carta
 	And Presiono boton Quedarse
-	Then Veo "PERDEDOR"
+	Then Veo "GANADOR"
