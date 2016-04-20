@@ -1,0 +1,16 @@
+<h1>Blackjack</h1>
+
+<p><%= @contador%>
+
+<p><%= @resultado%>
+
+<p><%= @banca%>
+
+<p><a href="/jugar">Pide Carta</a> 
+
+<form method="POST" action="/jugar">
+	<input type="submit" value="Pide Carta">
+</form>
+<form method="POST" action="/quedarse">
+	<input type="submit" value="Quedarse">
+</form>
