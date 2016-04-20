@@ -17,7 +17,7 @@ class BlackJack
 	end
 
 	def cargarBanca
-		return 18
+		return rand(17..21)
 	end
 	
 	def cartasMazo	
