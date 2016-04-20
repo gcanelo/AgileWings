@@ -11,12 +11,12 @@ Scenario: Inicio juego
 Scenario: Ver cartas en 5
 	Given Voy al inicio
 	When Presiono link Pide Carta
-	Then Veo "5"
+	Then Veo 5
 
 Scenario: Ver cartas en 5
 	Given Voy al inicio
 	When Presiono boton Pide Carta
-	Then Veo "21"
+	Then Veo 21
 
 Scenario: Ver perdedor
 	Given Voy al inicio

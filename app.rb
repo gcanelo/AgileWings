@@ -1,28 +1,27 @@
 require 'sinatra'
+require_relative "./lib/blackJack.rb"
 
 
 get '/' do
+	@@game = BlackJack.new
 	@contador = "Sin cartas"
-	@resultado = ""	
-	@banca = "18"	
 	erb :blackjack
 end
 
 get '/jugar' do
-	@contador = "5"		
+	@contador = @@game.pedirCarta		
 	erb :blackjack
 end
 
 post '/jugar' do
-	@contador = "21"
-	@banca = "18"
+	@contador = @@game.pedirCarta	
 	erb :blackjack
 end
 
 post '/quedarse' do
-	@banca = "18"
-	@contador = "21"
-	if @contador.to_i >= @banca.to_i 
+	@banca = @@game.cargarBanca	
+	@contador = @@game.rescatarJuego
+	if @contador >= @banca and @contador < 22
 		@resultado = "GANADOR" 
 	else
 		@resultado = "PERDEDOR"	
