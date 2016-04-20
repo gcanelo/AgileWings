@@ -9,11 +9,13 @@ get '/' do
 end
 
 get '/jugar' do
-	@contador = @@game.pedirCarta		
+	@@game.pedirCarta
+	@contador = @@game.rescatarJuego		
 	erb :blackjack
 end
 
 post '/jugar' do
+	@@game.pedirCarta
 	@contador = @@game.pedirCarta	
 	erb :blackjack
 end
