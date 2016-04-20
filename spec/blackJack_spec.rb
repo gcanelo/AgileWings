@@ -29,4 +29,17 @@ describe "BlackJack" do
 		game.cartasMazo.should == 8
 	end
 
+	it "rescatar total Banca" do
+		game = BlackJack.new
+		game.cargarBanca
+		game.rescatarBanca.should >= 17 and game.rescatarBanca.should <= 21
+	end
+
+	it "rescatar Juego" do
+		game = BlackJack.new
+		game.pedirCarta
+		game.pedirCarta
+		game.rescatarJuego.should >= 3 and game.rescatarJuego.should <= 21
+	end
+
 end
