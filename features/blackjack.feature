@@ -2,7 +2,7 @@ Feature: Blackjack
 
 Scenario: Ver el titulo
 	Given Voy al inicio
-	Then Veo "Blackjack"
+	Then Veo "Black Jack 2.0"
 
 Scenario: Inicio Juego
 	Given Voy al inicio
