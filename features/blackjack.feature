@@ -4,15 +4,16 @@ Scenario: Ver el titulo
 	Given Voy al inicio
 	Then Veo "Blackjack"
 
-Scenario: Inicio juego
+Scenario: Inicio Juego
 	Given Voy al inicio
 	Then Veo "#"
 	Then Veo "Sin cartas"
-
-Scenario: Ver cartas en 16
+    
+	
+Scenario: Ver cartas solicitadas
 	Given Voy al inicio
 	When Presiono boton Pide Carta
-	Then Veo 16
+	Then Veo "Cartas Solicitadas"
 
 Scenario: Ver perdedor
 	Given Voy al inicio
@@ -27,3 +28,11 @@ Scenario: Volver a Inicio
 	And Presiono boton Quedarse
 	When Presiono link Nuevo Juego
 	Then Veo "Sin cartas"
+
+Scenario: Mostrar una carta solicitada
+	Given Voy al inicio
+	When Presiono boton Pide Carta
+	And Presiono boton Pide Carta
+	Then Veo "Cartas Solicitadas"
+	
+

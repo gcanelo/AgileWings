@@ -1,3 +1,18 @@
+<html>
+<head>
+<script>
+function activarQuedarse()
+{
+var res = document.getElementById("resultado");
+if(res.value == "#")
+{
+var a = document.getElementById("Quedarse");
+a.disabled = true;
+}
+}
+</script>
+</head>
+<body onload="activarQuedarse();">
 <div align="center">
 	<table>
 	<tr>
@@ -8,6 +23,7 @@
 	</table>
 	<!--<div style="background-image:url(img.png);width:3%;height:8%;"></div>-->
 	<p><%= @carta%><%= @resultado%>
+	<p>Cartas Solicitadas: <%= @CartasSolicitadas%>
 	<p>Suma Cartas: <%= @contador%>	
 	<p>Total Banca: <%= @banca%>
 	<p>
@@ -18,16 +34,18 @@
 	<tr>
 		<td>
 		<form method="POST" action="/jugar">
-			<input type="submit" value="Pide Carta">
+		<input type="hidden" id="resultado" value="<%= @carta%><%= @resultado%>">
+			<input type="submit" value="Pide Carta" onclick="activarQuedarse();">
 		</form>
 		</td>
 		<td>
 		<form method="POST" action="/quedarse" >
-			<input type="submit" value="Quedarse"> 
+			<input type="submit" id="Quedarse" value="Quedarse"> 
 		</form>
 		</td>
 	</tr>
 	</table>
 	<p><a href="/">Nuevo Juego</a>
 </div>
-
+</body>
+</html>
