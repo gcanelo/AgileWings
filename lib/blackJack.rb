@@ -1,5 +1,6 @@
 class BlackJack
 	def initialize
+		@listaCartas = Array.new
 		@mazo = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]		
 		@totalJuego = 0
 		@carta = 0
@@ -12,9 +13,15 @@ class BlackJack
 
 	def pedirCarta
 		@carta = @mazo[rand(@mazo.length)]
-		@mazo.delete(@carta)
-		@totalJuego += @carta
-		return @carta
+		if @mazo.length > 0
+			@mazo.delete(@carta)
+			@totalJuego += @carta
+			@listaCartas.push @carta
+			return @carta
+		else
+			return "No hay mas cartas"
+		end		
+		
 	end
 
 	def cargarBanca
@@ -32,6 +39,10 @@ class BlackJack
 	
 	def rescatarJuego
 		return @totalJuego
+	end
+
+	def listarCartas
+		return @listaCartas
 	end
 
 end
