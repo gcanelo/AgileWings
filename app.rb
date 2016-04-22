@@ -35,7 +35,7 @@ post '/quedarse' do
 	@contador = @@game.rescatarJuego
 	@CartasSolicitadas = @@game.listarCartas.join "-"
 	if @contador > @banca and @contador < 22
-		@resultado = "GANADOR" 
+		@resultado = "GANADOR"
 	else
 		if @contador == @banca
 			@resultado = "EMPATE"

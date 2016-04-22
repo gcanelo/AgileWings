@@ -1,20 +1,21 @@
 class BlackJack
 	def initialize
 		@listaCartas = Array.new
-		@mazo = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]		
+		@listaCartasB = Array.new
+		@mazo = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10]		
 		@totalJuego = 0
 		@carta = 0
 		@totalBanca = 0
 	end	
 
 	def bienvenida
-		return "Bienvenido a BlackJack"
+		return "Bienvenido a Black Jack 2.0"
 	end
 
 	def pedirCarta
-		@carta = @mazo[rand(@mazo.length)]
+		@carta = @mazo[rand(@mazo.length)] #escoger carta del mazo
 		if @mazo.length > 0
-			@mazo.delete(@carta)
+			@mazo.delete(@carta) #se saca carta del mazo
 			@totalJuego += @carta
 			@listaCartas.push @carta
 			return @carta
@@ -24,7 +25,7 @@ class BlackJack
 		
 	end
 
-	def cargarBanca
+	def cargarBanca #Juega la banca
 		@totalBanca = rand(17..21)
 		return @totalBanca
 	end
@@ -33,7 +34,7 @@ class BlackJack
 		return @mazo.length
 	end
 	
-	def rescatarBanca
+	def rescatarBanca 
 		return @totalBanca
 	end
 	
