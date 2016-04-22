@@ -2,19 +2,19 @@
 <head>
 <script>
 function activarQuedarse()
-{
-var res = document.getElementById("resultado");
-if(res.value == "#" || res.value == "PERDEDOR"  || res.value == "GANADOR" || res.value == "EMPATE")
-{
-var a = document.getElementById("Quedarse");
-a.disabled = true;
-}
-if(res.value == "PERDEDOR"  || res.value == "GANADOR" || res.value == "EMPATE")
-{
-var a = document.getElementById("PideCarta");
-a.disabled = true;
-}
-}
+	{
+	var res = document.getElementById("resultado");
+	if(res.value == "#" || res.value == "PERDEDOR"  || res.value == "GANADOR" || res.value == "EMPATE")
+		{
+		var a = document.getElementById("Quedarse");
+		a.disabled = true;
+		}
+	if(res.value == "PERDEDOR"  || res.value == "GANADOR" || res.value == "EMPATE")
+		{
+		var a = document.getElementById("PideCarta");
+		a.disabled = true;
+		}
+	}
 </script>
 </head>
 <body onload="activarQuedarse();">
@@ -22,13 +22,14 @@ a.disabled = true;
 	<table>
 	<tr>
 		<td><img src="img.png"></td>
-		<td style="font-size:220%;"><b>Blackjack</b></td>
+		<td style="font-size:220%;"><b>Black Jack 2.0</b></td>
 		<td><img src="img.png"></td>
 	</tr>
 	</table>
 	<!--<div style="background-image:url(img.png);width:3%;height:8%;"></div>-->
-	<p><%= @carta%><%= @resultado%>
+	<p>Carta Jugador: <%= @carta%><%= @resultado%>
 	<p>Cartas Solicitadas: <%= @CartasSolicitadas%>
+	<p>
 	<p>Suma Cartas: <%= @contador%>	
 	<p>Total Banca: <%= @banca%>
 	<p>
@@ -40,12 +41,12 @@ a.disabled = true;
 		<td>
 		<form method="POST" action="/jugar">
 		<input type="hidden" id="resultado" value="<%= @carta%><%= @resultado%>">
-			<input type="submit" id="PideCarta" value="Pide Carta" onclick="activarQuedarse();">
+		<input type="submit" id="PideCarta" value="Pide Carta" onclick="activarQuedarse();">
 		</form>
 		</td>
 		<td>
 		<form method="POST" action="/quedarse" >
-			<input type="submit" id="Quedarse" value="Quedarse"> 
+		<input type="submit" id="Quedarse" value="Quedarse"> 
 		</form>
 		</td>
 	</tr>
