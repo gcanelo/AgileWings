@@ -6,20 +6,24 @@ Scenario: Ver el titulo
 
 Scenario: Inicio juego
 	Given Voy al inicio
+	Then Veo "#"
 	Then Veo "Sin cartas"
 
-Scenario: Ver cartas en 5
-	Given Voy al inicio
-	When Presiono link Pide Carta
-	Then Veo 5
-
-Scenario: Ver cartas en 5
+Scenario: Ver cartas en 16
 	Given Voy al inicio
 	When Presiono boton Pide Carta
-	Then Veo 21
+	Then Veo 16
 
 Scenario: Ver perdedor
 	Given Voy al inicio
 	When Presiono boton Pide Carta
 	And Presiono boton Quedarse
 	Then Veo "PERDEDOR"
+
+Scenario: Volver a Inicio
+	Given Voy al inicio
+	When Presiono boton Pide Carta
+	And Presiono boton Pide Carta
+	And Presiono boton Quedarse
+	When Presiono link Nuevo Juego
+	Then Veo "Sin cartas"

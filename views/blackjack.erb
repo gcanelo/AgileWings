@@ -1,16 +1,33 @@
-<h1>Blackjack</h1>
+<div align="center">
+	<table>
+	<tr>
+		<td><img src="img.png"></td>
+		<td style="font-size:220%;"><b>Blackjack</b></td>
+		<td><img src="img.png"></td>
+	</tr>
+	</table>
+	<!--<div style="background-image:url(img.png);width:3%;height:8%;"></div>-->
+	<p><%= @carta%><%= @resultado%>
+	<p>Suma Cartas: <%= @contador%>	
+	<p>Total Banca: <%= @banca%>
+	<p>
+	
+	<!--<p><a href="/jugar">Pide Carta</a> -->
 
-<p><%= @contador%>
+	<table>
+	<tr>
+		<td>
+		<form method="POST" action="/jugar">
+			<input type="submit" value="Pide Carta">
+		</form>
+		</td>
+		<td>
+		<form method="POST" action="/quedarse" >
+			<input type="submit" value="Quedarse"> 
+		</form>
+		</td>
+	</tr>
+	</table>
+	<p><a href="/">Nuevo Juego</a>
+</div>
 
-<p><%= @resultado%>
-
-<p><%= @banca%>
-
-<p><a href="/jugar">Pide Carta</a> 
-
-<form method="POST" action="/jugar">
-	<input type="submit" value="Pide Carta">
-</form>
-<form method="POST" action="/quedarse">
-	<input type="submit" value="Quedarse">
-</form>
