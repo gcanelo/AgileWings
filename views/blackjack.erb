@@ -4,9 +4,14 @@
 function activarQuedarse()
 {
 var res = document.getElementById("resultado");
-if(res.value == "#")
+if(res.value == "#" || res.value == "PERDEDOR"  || res.value == "GANADOR" || res.value == "EMPATE")
 {
 var a = document.getElementById("Quedarse");
+a.disabled = true;
+}
+if(res.value == "PERDEDOR"  || res.value == "GANADOR" || res.value == "EMPATE")
+{
+var a = document.getElementById("PideCarta");
 a.disabled = true;
 }
 }
@@ -35,7 +40,7 @@ a.disabled = true;
 		<td>
 		<form method="POST" action="/jugar">
 		<input type="hidden" id="resultado" value="<%= @carta%><%= @resultado%>">
-			<input type="submit" value="Pide Carta" onclick="activarQuedarse();">
+			<input type="submit" id="PideCarta" value="Pide Carta" onclick="activarQuedarse();">
 		</form>
 		</td>
 		<td>
